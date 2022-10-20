@@ -1,9 +1,6 @@
 <?php
-  /* Parsing Json Files  */
-
-  $jsonRawData = file_get_contents("results/query1.json");
-  $query1 = json_decode($jsonRawData, true); // True to indicate associative arrays
-
+  /* Import results  */
+  include_once __DIR__ . "./partials/results.php";
   
   /* FUNCTIONS */
   include_once __DIR__ . "./partials/functions.php";
@@ -65,7 +62,11 @@
   <main>
     <h2>Queries & Results</h2>
 
-    <?php printQuery($query1, 1) ?>
+    <?php 
+      foreach($results as $index=>$result) {
+        printQuery($result, $index + 1);
+      }
+    ?>
   </main>
 </body>
 </html>

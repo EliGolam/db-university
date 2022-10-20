@@ -36,6 +36,22 @@ AND `hour` >= '14:00:00';
 
 ### Query 6: Select bachelors 'Magistrale'
 
+[JSON Results](results/query6.json)
+
+SELECT `name`, `level`
+FROM `degrees`
+WHERE `level` LIKE 'magistrale';
+
 ### Query 7: How many departments are there
 
+12
+
+SELECT COUNT(id)
+FROM departments;
+
 ### Query 8: How many teachers don't have their phone numbers?
+
+50
+
+SELECT COUNT(`id`) - COUNT(`phone`)
+FROM `teachers`;
