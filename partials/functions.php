@@ -15,6 +15,11 @@
 
     printTag($query["query"], 'summary', 'query-title');
 
+    $totalResults = count($query['data']);
+    $totalResultsText = "Total Results: {$totalResults}";
+
+    printTag($totalResultsText, 'p', 'total-results');
+
     switch($queryNumber) {
       case 1: 
         echoQueryResult1($query['data']);
