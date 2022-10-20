@@ -16,6 +16,17 @@ WHERE `cfu` > 10;
 
 ### Query 3: Students older than 30
 
+TOTAL: 3307 total
+
+Collected Data: 100 in Json
+
+[JSON Results](results/query3.json)
+
+SELECT name, surname, date_of_birth,
+TIMESTAMPDIFF(YEAR, date_of_birth, CURRENT_DATE) as age
+FROM `students`
+WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURRENT_DATE) > 30;
+
 ### Query 4: Select first semester courses from year 1
 
 [JSON Results](results/query4.json)

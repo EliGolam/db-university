@@ -29,6 +29,9 @@
       case 2: 
         echoQueryResult2($data);
         break;
+      case 3:
+        echoQueryResult3($data);
+        break;
       case 4: 
         echoQueryResult4($data);
         break;
@@ -54,6 +57,14 @@
   function echoQueryResult2(&$data) {
     foreach($data as $result) {
       echo "<p>{$result["name"]} - CFU : {$result["cfu"]}</p>";
+    }
+  }
+
+  function echoQueryResult3(&$data) {
+    echo "<p>Showing only first 100 results of 3307</p>";
+
+    foreach($data as $result) {
+      echo "<p>{$result["name"]} {$result["surname"]} - Age {$result["age"]} ({$result["date_of_birth"]})</p>";
     }
   }
 
