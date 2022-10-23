@@ -187,4 +187,3 @@ INNER JOIN courses ON exams.course_id = courses.id
 INNER JOIN degrees ON courses.degree_id = degrees.id
 GROUP BY es.student_id, es.exam_id
 ORDER BY COUNT(es.exam_id) DESC;
-
