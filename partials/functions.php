@@ -7,6 +7,7 @@
     echo $openingTag . $text . $closingTag;
   }
 
+  
   function printQuery (&$query, $queryNumber) {
     $openingTag = '<details>';
     $closingTag = '</details>';
@@ -47,6 +48,7 @@
 
     echo $closingTag;
   }
+
 
   function echoQueryResult1(&$data) {
     foreach($data as $result) {
