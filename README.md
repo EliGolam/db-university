@@ -75,7 +75,7 @@ WHERE phone IS NULL;
 --  Contare quanti iscritti ci sono stati ogni anno
 SELECT YEAR(s.enrolment_date) as year, COUNT(s.id) as num_students
 FROM students as s
-GROUP BY YEAR(s.enrolment_date);
+GROUP BY year;
 
 ### Query 2: Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
@@ -137,9 +137,9 @@ WHERE t.id = 44;
 
 -- Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 SELECT 
-	st.surname, st.name, st.registration_number, 
-	deg.name as degree, deg.address as address, 
-    dep.name as department, dep.website, dep.head_of_department   
+	st.surname, st.name, st.registration_number,
+	deg.name as degree, deg.address as address,
+  dep.name as department, dep.website, dep.head_of_department
 FROM students as st
 INNER JOIN degrees as deg ON st.degree_id = deg.id
 INNER JOIN departments as dep ON deg.department_id = dep.id
@@ -178,6 +178,7 @@ SELECT
   es.student_id,
   CONCAT(st.name, " ", st.surname) as student,
   AVG(es.vote) as average_vote,
+  MAX(es.vote) as max_vote
   COUNT(es.exam_id) as n_exam_attempts,
   es.exam_id, courses.name, degrees.name
 FROM exam_student as es 
@@ -185,5 +186,6 @@ INNER JOIN students AS st ON es.student_id = st.id
 INNER JOIN exams ON es.exam_id = exams.id
 INNER JOIN courses ON exams.course_id = courses.id
 INNER JOIN degrees ON courses.degree_id = degrees.id
-GROUP BY es.student_id, es.exam_id
-ORDER BY COUNT(es.exam_id) DESC;
+GROUP BY es.student_id, courses.id
+ORDER BY COUNT(es.exam_id) DESC
+HAVING max_vote > 18;

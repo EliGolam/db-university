@@ -1,15 +1,11 @@
 <?php
-  /* Import results  */
-  include_once __DIR__ . "./partials/results.php";
   
-  /* FUNCTIONS */
-  include_once __DIR__ . "./partials/functions.php";
 
 ?><!DOCTYPE html>
 <html lang="en">
 <!-- METADATA -->
 <head>
-    <title>PHP Practice</title>
+    <title>PHP Practice | PHP DATABASE QUERIES</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <meta charset="UTF-8">
@@ -55,22 +51,28 @@
 <!-- BODY -->
 <body>
   <header class="container">
-    <h1 class="title">MYSQL Practice</h1>
+    <h1 class="title">MYSQL queries through PHP</h1>
     <p class="subtitle">by Elias Mahfuzul</p>
 
     <nav>
-      <a href="./php-queries.php">PHP Queries Here!</a>
+      <a href="./index.php">Home</a>
     </nav>
   </header>
 
-  <main>
-    <h2>Queries & Results</h2>
+  <main class="container">
+    <section>
+      <h2>What's on this page?</h2>
+      <p>I've been learning PHP and MySQL recently and I'll try to now combine them together by making use of
+        a local SQL database.
+      </p>
+    </section>
 
-    <?php 
-      foreach($results as $index=>$result) {
-        printQuery($result, $index + 1);
-      }
-    ?>
+    <!-- Retrieve Simple Data and connect it to PHP + JSON file and printed through Vue -->
+    <section>
+      <h2>Test Database connection with simple static query:</h2>
+      <p>Print to DOM the teachers with id < 10</p>
+      <?php include_once __DIR__ . "./data/test-database.php"; ?>
+    </section>    
   </main>
 </body>
 </html>
