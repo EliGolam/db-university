@@ -71,8 +71,18 @@
     <section>
       <h2>Test Database connection with simple static query:</h2>
       <p>Print to DOM the teachers with id < 10</p>
-      <?php include_once __DIR__ . "./data/test-database.php"; ?>
+      <?php include __DIR__ . "/data/test-database.php"; ?>
     </section>    
+
+    <section>
+      <h2>Test Database with simple dynamic query</h2>
+      <form action="#" method="GET">
+        <label for="id">Teacher ID</label>
+        <input type="text" name="id" id="id" placeholder="1" />
+      </form>
+
+      <?php include __DIR__ . "/data/test-reactive-query.php"; ?>
+    </section>
   </main>
 </body>
 </html>
