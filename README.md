@@ -174,7 +174,7 @@ WHERE dep.name = "Dipartimento di Matematica";
 ### Query 7: BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
 
 --  BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
-SELECT 
+SELECT
   es.student_id,
   CONCAT(st.name, " ", st.surname) as student,
   AVG(es.vote) as average_vote,
