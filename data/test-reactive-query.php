@@ -1,6 +1,6 @@
 <?php
 
-  include __DIR__ . "/test-databse.php";
+  include __DIR__ . "/test-database.php";
 
   /* SEARCH DATA */
 

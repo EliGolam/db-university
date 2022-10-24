@@ -71,7 +71,7 @@
     <section>
       <h2>Test Database connection with simple static query:</h2>
       <p>Print to DOM the teachers with id < 10</p>
-      <?php include __DIR__ . "/data/test-database.php"; ?>
+      <?php include __DIR__ . "/data/test-static-query.php"; ?>
     </section>    
 
     <section>
